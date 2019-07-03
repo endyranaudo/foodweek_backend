@@ -10,8 +10,10 @@
 User.destroy_all
 
 endy = User.create(username: "Endy", password: "endy" )
-# fran = User.create(username: "Fran", password: "fran")
-# harriet = User.create(username: "Harriet", password: "harriet")
+fran = User.create(username: "Fran", password: "fran")
+harriet = User.create(username: "Harriet", password: "harriet")
+
+ing1= Ingredient.create(name: "pasta" )
 
 # foods = [
 #   {name: "apple"},
