@@ -9,11 +9,13 @@
 # Food.destroy_all
 User.destroy_all
 
-endy = User.create(username: "Endy", password: "endy" )
-fran = User.create(username: "Fran", password: "fran")
-harriet = User.create(username: "Harriet", password: "harriet")
+endy = User.create(username: "Endy", password: "endy", email: "endy@email.com" )
+fran = User.create(username: "Fran", password: "fran", email: "fran@email.com")
+harriet = User.create(username: "Harriet", password: "harriet", email: "harriet@email.com")
 
 ing1= Ingredient.create(name: "pasta" )
+
+userIng1= UserIngredient.create(user: endy, ingredient: ing1 )
 
 # foods = [
 #   {name: "apple"},
