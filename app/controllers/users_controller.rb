@@ -5,14 +5,26 @@ class UsersController < ApplicationController
     render json: users
   end
 
+
   def show
     user = User.find_by(id: params[:id])
     if user 
-      render json: user
+      render json: user, include: [:user_ingredients]
     else
       render json: {error: 'User not found.'}, status: 404
     end
   end
+
+
+  def create 
+    newUser = User.new(username: params[:username], email: params[:email], password: params[:password])
+    if newUser.save
+      render json: newUser
+    else
+      render json: {error: "User not valid."}, status: 400
+    end
+  end 
+
 
   def signin 
     user = User.find_by(username: params[:username])
@@ -23,6 +35,7 @@ class UsersController < ApplicationController
     end
   end
   
+
   def validate
     user = current_user
     if user
@@ -30,6 +43,13 @@ class UsersController < ApplicationController
     else
       render json: { error: "User not found" }, status: 404
     end
+  end
+
+  
+  private 
+
+  def user_params
+    params.permit(:username, :email, :password)
   end
   
 end
