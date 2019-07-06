@@ -8,6 +8,8 @@
 
 # Food.destroy_all
 User.destroy_all
+Ingredient.destroy_all
+UserIngredient.destroy_all
 
 endy = User.create(username: "Endy", password: "endy", email: "endy@email.com" )
 fran = User.create(username: "Fran", password: "fran", email: "fran@email.com")
