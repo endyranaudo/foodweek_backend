@@ -15,9 +15,13 @@ endy = User.create(username: "Endy", password: "endy", email: "endy@email.com" )
 fran = User.create(username: "Fran", password: "fran", email: "fran@email.com")
 harriet = User.create(username: "Harriet", password: "harriet", email: "harriet@email.com")
 
-ing1= Ingredient.create(name: "pasta" )
+ing1= Ingredient.create(name: "pasta")
+ing2= Ingredient.create(name: "rice")
+ing3= Ingredient.create(name: "flour")
 
-userIng1= UserIngredient.create(user: endy, ingredient: ing1 )
+userIng1= UserIngredient.create(user_id: endy.id, ingredient_id: ing1.id )
+userIng2= UserIngredient.create(user_id: fran.id, ingredient_id: ing2.id )
+userIng3= UserIngredient.create(user_id: harriet.id, ingredient_id: ing3.id )
 
 # foods = [
 #   {name: "apple"},
