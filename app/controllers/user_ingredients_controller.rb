@@ -21,7 +21,7 @@ class UserIngredientsController < ApplicationController
     ingredient = Ingredient.find_or_create_by(name: params[:ingredient_name])
 
     
-    userIngredient = UserIngredient.new(user_id: params[:user_id], ingredient_id: ingredient.id)
+    userIngredient = UserIngredient.new(user: current_user, ingredient_id: ingredient.id)
     if userIngredient.save
         render json: ingredient
     else

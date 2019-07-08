@@ -44,6 +44,16 @@ class UsersController < ApplicationController
       render json: { error: "User not found" }, status: 404
     end
   end
+  
+
+  def ingredients
+    user = current_user
+    if user
+      render json: user.ingredients
+    else
+      render json: { error: "User not found" }, status: 404
+    end
+  end
 
   
   private 
