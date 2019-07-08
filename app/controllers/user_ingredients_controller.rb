@@ -1,6 +1,5 @@
 class UserIngredientsController < ApplicationController
 
-
   def index
     ingredients = UserIngredient.all
     render json: ingredients
@@ -18,9 +17,13 @@ class UserIngredientsController < ApplicationController
 
 
   def create 
-    userIngredient = UserIngredient.new(user_id: params[:user_id], ingredient_id: params[:ingredient_id])
+    # find or create the ingredient if it doesn't already exist
+    ingredient = Ingredient.find_or_create_by(name: params[:ingredient_name])
+
+    
+    userIngredient = UserIngredient.new(user_id: params[:user_id], ingredient_id: ingredient.id)
     if userIngredient.save
-        render json: userIngredient
+        render json: ingredient
     else
         render json: {error: "Item not valid."}, status: 400
     end
