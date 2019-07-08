@@ -3,6 +3,7 @@ class ApplicationController < ActionController::API
   
   def current_user
     id = decode_token['id']
+    # byebug
     User.find_by(id: id)
   end
 

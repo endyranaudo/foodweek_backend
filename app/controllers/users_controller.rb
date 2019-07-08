@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def signin 
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      render json: { username: user.username, token: issue_token({ id: user.id }) }
+      render json: { id: user.id, username: user.username, token: issue_token({ id: user.id }) }
     else
       render json: { error: 'Invalid username/password combination' }, status: 401
     end
