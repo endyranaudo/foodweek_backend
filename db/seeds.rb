@@ -11,7 +11,7 @@ User.destroy_all
 Ingredient.destroy_all
 UserIngredient.destroy_all
 
-endy = User.create(username: "Endy", password: "endy", email: "endy@email.com", picture_url: "https://drive.google.com/file/d/1n5oUgIf-ssNxXR8qWpwyCUe4_TPv9GLp/view?usp=sharing" )
+endy = User.create(username: "Endy", password: "endy", email: "endy@email.com", picture_url: "https://i.imgur.com/Zhl3OLz.jpg" )
 fran = User.create(username: "Fran", password: "fran", email: "fran@email.com", picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiwSagjwIFWus6shCClFIPkf4Tsq3nx28ALHx61o4bQO002bz")
 harriet = User.create(username: "Harriet", password: "harriet", email: "harriet@email.com", picture_url: "https://www.famousbirthsdeaths.com/wp-content/uploads/2016/06/angelina-jolie-bio-net-worth-facts.jpg")
 
