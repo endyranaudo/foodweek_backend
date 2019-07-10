@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def create 
     newUser = User.new(username: params[:username], email: params[:email], password: params[:password])
     if newUser.save
-      render json: newUser
+      render json: { id: newUser.id, username: newUser.username, picture_url: newUser.picture_url, token: issue_token({ id: newUser.id }) }
     else
       render json: {error: "User not valid."}, status: 400
     end
